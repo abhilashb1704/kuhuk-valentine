@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Kuhuk ❤️</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+
+body{
+scroll-behavior:smooth;
+overflow-x:hidden;
+}
+
+/* LOCK SCREEN */
+#lockScreen{
+position:fixed;
+width:100%;
+height:100vh;
+background:linear-gradient(135deg,#ff758c,#ff7eb3);
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+color:white;
+z-index:1000;
+text-align:center;
+}
+
+#lockScreen input{
+padding:10px;
+border:none;
+border-radius:20px;
+margin-top:15px;
+text-align:center;
+}
+
+#lockScreen button{
+margin-top:15px;
+padding:10px 20px;
+border:none;
+border-radius:20px;
+background:white;
+color:#ff4d6d;
+cursor:pointer;
+}
+
+/* SECTIONS */
+section{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:40px;
+color:white;
+opacity:0;
+transform:translateY(50px);
+transition:1s;
+}
+
+section.show{
+opacity:1;
+transform:translateY(0);
+}
+
+.page1{background:linear-gradient(to right,#ff9a9e,#fad0c4);}
+.page2{background:linear-gradient(to right,#a18cd1,#fbc2eb);}
+.page3{background:linear-gradient(to right,#f6d365,#fda085);}
+.page4{background:linear-gradient(to right,#84fab0,#8fd3f4);}
+.page5{background:linear-gradient(to right,#ff758c,#ff7eb3);}
+
+h1{margin-bottom:20px;font-size:2.5rem;}
+p{max-width:700px;line-height:1.6;font-size:1.2rem;}
+
+.story-img{
+width:220px;
+height:220px;
+object-fit:cover;
+border-radius:20px;
+margin-top:20px;
+box-shadow:0 10px 20px rgba(0,0,0,0.3);
+}
+
+/* Timeline Slider */
+.timeline{
+display:flex;
+overflow-x:auto;
+gap:20px;
+padding:20px;
+margin-top:20px;
+}
+.timeline div{
+min-width:200px;
+background:white;
+color:#ff4d6d;
+padding:15px;
+border-radius:20px;
+}
+
+/* Buttons */
+button{
+padding:12px 25px;
+border:none;
+border-radius:30px;
+cursor:pointer;
+margin:15px;
+font-size:1rem;
+}
+
+#yesBtn{background:#ff4d6d;color:white;}
+#noBtn{background:white;color:#ff4d6d;position:absolute;}
+
+#finalMessage{display:none;font-size:1.5rem;margin-top:20px;}
+
+/* Love Letter */
+#letter{
+display:none;
+position:fixed;
+background:white;
+color:#333;
+padding:30px;
+border-radius:20px;
+max-width:400px;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+box-shadow:0 10px 30px rgba(0,0,0,0.3);
+z-index:2000;
+}
+
+/* Mobile */
+@media(max-width:768px){
+h1{font-size:1.8rem;}
+p{font-size:1rem;}
+section{padding:20px;}
+}
+</style>
+</head>
+<body>
+
+<!-- LOCK -->
+<div id="lockScreen">
+<h1>Enter Our Special Date 💕</h1>
+<p>Hint: The day Orange met Kuhuk</p>
+<input type="password" id="password" placeholder="DD/MM/YYYY">
+<button onclick="unlock()">Unlock</button>
+</div>
+
+<!-- PAGE 1 -->
+<section class="page1">
+<h1>Hi Kuhuk ❤️</h1>
+<p>
+Before anything…  
+You are NOT allowed to judge my coding skills.  
+Also yes, Orange made this.  
+Scroll slowly.
+</p>
+</section>
+
+<!-- PAGE 2 -->
+<section class="page2">
+<h1>18th December 2024</h1>
+<p>
+The day I met you.  
+I didn't know that day would change everything.  
+Your innocent and very cute eyes looked at me…  
+And I swear something shifted.
+</p>
+<img src="pic1.jpeg" class="story-img">
+</section>
+
+<!-- PAGE 3 -->
+<section class="page3">
+<h1>Our Timeline 💕</h1>
+<div class="timeline">
+<div><strong>24 Jan</strong><br>First Date. I tried acting cool.</div>
+<div><strong>30 Jan</strong><br>First Kiss. Time literally stopped.</div>
+<div><strong>24 April</strong><br>Started Dating. Best decision ever.</div>
+<div><strong>Tulum Date</strong><br>Met BhandHuk for the first time😭</div>
+<div><strong>Social</strong><br>First time clubbing together</div>
+<div><strong>Anuv Jain Concert</strong><br>First concert for both of us</div>
+</div>
+</section>
+
+<!-- PAGE 4 -->
+<section class="page4">
+<h1>Why I Love You</h1>
+<p>
+I love the way you look at me with your innocent and very cute eyes.  
+I love your smile, it genuinely fixes my worst days.  
+I love how you care for me.  
+I love your heart.  
+And obviously… your looks too 😌
+</p>
+<button onclick="openLetter()">Open Love Letter 💌</button>
+</section>
+
+<!-- PAGE 5 -->
+<section class="page5">
+<h1>Kuhuk…</h1>
+<p>
+From 18th December to today,  
+Every moment with you has felt unreal.  
+And now I have one question.
+</p>
+<h1>Will You Be My Valentine? 💖</h1>
+
+<button id="yesBtn">YES 💕</button>
+<button id="noBtn">No 😳</button>
+
+<div id="finalMessage">
+You just made Orange the happiest boyfriend alive 😭💖  
+Happy Valentine's Day Kuhuk 💌
+</div>
+</section>
+
+<!-- LOVE LETTER -->
+<div id="letter">
+<h2>To My Kuhuk 💕</h2>
+<p>
+You are my calm.  
+My chaos.  
+My peace.  
+My life.
+You're my favorite person in this world. 
+Thank you for loving me the way you do.
+</p>
+<button onclick="closeLetter()">Close</button>
+</div>
+
+<audio id="bgm" src="arz.mp3" loop></audio>
+
+<script>
+// Unlock
+function unlock(){
+if(document.getElementById("password").value==="181224"){
+document.getElementById("lockScreen").style.display="none";
+document.getElementById("bgm").play();
+}else{
+alert("Wrong date Kuhuk 😏");
+}
+}
+
+// Fade animation
+const sections=document.querySelectorAll("section");
+window.addEventListener("scroll",()=>{
+sections.forEach(sec=>{
+const top=sec.getBoundingClientRect().top;
+if(top<window.innerHeight-100){
+sec.classList.add("show");
+}
+});
+});
+
+// Love Letter
+function openLetter(){
+document.getElementById("letter").style.display="block";
+}
+function closeLetter(){
+document.getElementById("letter").style.display="none";
+}
+
+// Confetti effect
+function confetti(){
+for(let i=0;i<100;i++){
+let conf=document.createElement("div");
+conf.style.position="fixed";
+conf.style.width="10px";
+conf.style.height="10px";
+conf.style.background="hsl("+Math.random()*360+",100%,50%)";
+conf.style.top=Math.random()*100+"vh";
+conf.style.left=Math.random()*100+"vw";
+document.body.appendChild(conf);
+setTimeout(()=>conf.remove(),2000);
+}
+}
+
+// YES
+document.getElementById("yesBtn").addEventListener("click",()=>{
+document.getElementById("finalMessage").style.display="block";
+document.getElementById("yesBtn").style.display="none";
+document.getElementById("noBtn").style.display="none";
+confetti();
+});
+
+// NO runs
+document.getElementById("noBtn").addEventListener("mouseover",function(){
+this.style.left=Math.random()*80+"%";
+this.style.top=Math.random()*80+"%";
+});
+</script>
+
+</body>
+</html>
